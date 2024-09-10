@@ -1,0 +1,9 @@
+{
+  "name": "tew-protos",
+  "version": "1.0.0",
+  "description": "TEW protos",
+  "main": "index.js",
+  "repository": "git@github.com:eliemugenzi/tew-protos.git",
+  "author": "Elie Mugenzi <eliemugenzi@gmail.com>",
+  "license": "MIT"
+}
