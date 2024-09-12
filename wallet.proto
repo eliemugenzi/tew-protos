@@ -17,7 +17,7 @@ message NewWalletRequest {
 
 message NewWalletResponse {
   int32 status = 1;
-  string message
+  string message = 2;
 }
 
 message FindWalletRequest {
