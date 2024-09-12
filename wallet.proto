@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+package wallets;
+
+service WalletService {
+  rpc CreateWallet(NewWalletRequest) returns (NewWalletResponse){}
+  rpc FindWallet(FindWalletRequest) returns (FindWalletResponse) {}
+  rpc GetWallets(GetWalletsRequest) returns (GetWalletsResponse) {}
+  rpc DepositMoney(DepositMoneyRequest) returns (DepositMoneyResponse) {}
+  rpc WithdrawMoney(WithdrawMoneyRequest) returns (WithdrawMoneyResponse) {}
+}
+
+message NewWalletRequest {
+  int32 userId = 1;
+  string type = 2;
+}
+
+message NewWalletResponse {
+  int32 status = 1;
+  string message
+}
+
+message FindWalletRequest {
+  string accountNumber = 1;
+}
+
+message WalletActivityLog {
+  int32 transactionId = 1;
+  string action = 2;
+  double amount = 3;
+}
+
+message WalletData {
+ int32 id = 1;
+ string accountNumber = 2;
+ int32 userId = 3;
+ string type = 4;
+ double balance = 5;
+ repeated WalletActivityLog activityLogs = 6;
+}
+
+message FindWalletResponse {
+  int32 status = 1;
+  string message = 2;
+  WalletData data = 3;
+}
+
+message GetWalletsRequest {
+  int32 userId = 1;
+}
+
+message GetWalletsResponse {
+  int32 status = 1;
+  string message = 2;
+  repeated WalletData data = 3;
+}
+
+message DepositMoneyRequest {
+ string accountNumber = 1;
+ double amount = 2;
+ int32 transactionId = 3;
+}
+
+message DepositMoneyResponse {
+ int32 status = 1;
+ string message = 2;
+}
+
+message WithdrawMoneyRequest {
+  string accountNumber = 1;
+  double amount = 2;
+  int32 transactionId = 3;
+}
+
+message WithdrawMoneyResponse {
+  int32 status = 1;
+  string message = 2;
+}
