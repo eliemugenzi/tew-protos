@@ -8,8 +8,8 @@ service TransactionService {
 }
 
 message NewTransactionRequest {
-  string senderAccount = 1;
-  string receiverAccount = 2;
+  string senderAccountNumber = 1;
+  string receiverAccountNumber = 2;
   double amount = 3;
   int32 userId = 4;
 }
@@ -25,8 +25,8 @@ message GetTransactionsRequest {
 }
 
 message TransactionData {
-  string senderAccount = 1;
-  string receiverAccount = 2;
+  string senderAccountNumber = 1;
+  string receiverAccountNumber = 2;
   double amount = 3;
   string status = 4;
 }
