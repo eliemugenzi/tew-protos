@@ -8,6 +8,7 @@ service WalletService {
   rpc GetWallets(GetWalletsRequest) returns (GetWalletsResponse) {}
   rpc DepositMoney(DepositMoneyRequest) returns (DepositMoneyResponse) {}
   rpc WithdrawMoney(WithdrawMoneyRequest) returns (WithdrawMoneyResponse) {}
+  rpc Topup(TopupMoneyRequest) returns (TopupMoneyResponse) {}
 }
 
 message NewWalletRequest {
@@ -73,6 +74,16 @@ message WithdrawMoneyRequest {
 }
 
 message WithdrawMoneyResponse {
+  int32 status = 1;
+  string message = 2;
+}
+
+message TopupMoneyRequest {
+  string accountNumber = 1;
+  double amount = 2;
+}
+
+message TopupMoneyResponse {
   int32 status = 1;
   string message = 2;
 }
