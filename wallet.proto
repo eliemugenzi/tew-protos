@@ -95,8 +95,15 @@ message ActivityLogRequest {
   int32 limit = 3;
 }
 
+message ActivityLogResponseMeta {
+ int32 page = 1;
+ int32 pages = 2;
+ int32 total = 3;
+}
+
 message ActivityLogResponse {
   int32 status = 1;
   string message = 2;
   repeated WalletActivityLog data = 3;
+  ActivityLogResponseMeta meta = 4;
 }
