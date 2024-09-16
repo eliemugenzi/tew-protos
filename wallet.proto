@@ -31,7 +31,6 @@ message WalletActivityLog {
   int32 transactionId = 1;
   string action = 2;
   double amount = 3;
-  string createdAt = 4;
 }
 
 message WalletData {
