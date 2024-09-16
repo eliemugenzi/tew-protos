@@ -1,7 +1,5 @@
 syntax = "proto3";
 
-import "google/protobuf/timestamp.proto";
-
 package wallets;
 
 service WalletService {
@@ -33,7 +31,7 @@ message WalletActivityLog {
   int32 transactionId = 1;
   string action = 2;
   double amount = 3;
-  google.protobuf.Timestamp createdAt = 4;
+  string createdAt = 4;
 }
 
 message WalletData {
